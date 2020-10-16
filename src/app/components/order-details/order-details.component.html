@@ -1,0 +1,53 @@
+<section class="col-sm-12 col-md-10 col-lg-8 col-xl-8 mx-auto p-2 m-0 mt-5">
+    <div class="col-12 p-0 m-0 order mb-2 mt-5">
+    <label class="bg-primary text-white col-12 text-center p-3 m-0 title">
+      <strong>Order Details</strong>
+    </label>
+      <div class="col-12 p-3 m-0">
+        <div class="card p-2 mb-2 col-12 mx-auto order-info">
+          <label class="row p-0 m-0">
+            <span class="col-4 p-0 m-0 item-label">Customer Name</span>  
+            <span class="col-8 p-0 m-0">: {{orderDetails?.customerName}}</span>
+          </label>
+
+          <label class="row p-0 m-0">
+            <span class="col-4 p-0 m-0 item-label">Customer Address</span> 
+            <span class="col-8 p-0 m-0">: {{orderDetails?.address}}</span>
+          </label>
+
+          <label class="row p-0 m-0">
+            <span class="col-4 p-0 m-0 item-label">Order Status</span> 
+            <span class="col-8 p-0 m-0">: <span class="badge badge-success">{{orderDetails?.status}}</span></span>
+          </label>
+      </div>
+   
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Item Name </th>
+              <th>Item Price </th>
+              <th>Item Quantity </th>
+              <th>Total Item Price </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orderDetails.items">
+              <td>{{item.itemName}}</td>
+              <td>{{item.price | currency: 'INR'}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.price * item.quantity | currency: 'INR'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="row justify-content-between p-0 m-0">
+          <button class="btn btn-success btn-sm" [routerLink]="['/orders']" routerLinkActive="router-link-active">
+            Go Back
+          </button>
+          <span class="item-label"><strong>Total Amount :</strong> {{getTotalAmount(orderDetails?.items) | currency: 'INR'}}</span> 
+      </div>
+      </div>
+  </div>
+</section>

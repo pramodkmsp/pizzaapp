@@ -1,0 +1,62 @@
+<section class="col-sm-12 col-md-10 col-lg-8 col-xl-8 mx-auto p-2 m-0 mt-5">
+  <div class="row p-2 m-0">
+  <label class="col-12 mt-3 mb-3 text-center order-label">Orders List</label>
+    <div class="col-12 p-2 m-0 orders card mb-2" *ngFor="let order of orderedData">
+      <div class="p-0 m-0 col-12 mx-auto">
+        <label class="row p-0 m-0">
+          <span class="col-4 p-0 m-0"><strong>Customer Name</strong></span>
+          <span class="col-8 p-0 m-0">: {{order?.customerName}}</span>
+        
+          <span class="col-4 p-0 m-0"><strong>Customer Address</strong></span>
+          <span class="col-8 p-0 m-0">: {{order?.address}}</span>
+        
+          <span class="col-4 p-0 m-0"><strong>No. of Items Ordered</strong></span>
+          <span class="col-8 p-0 m-0">: <span class="badge badge-primary"> {{order?.items?.length}}</span></span>
+        
+          <span class="col-4 p-0 m-0"><strong>Total Amount:</strong></span>
+          <span class="col-8 p-0 m-0">: {{getTotalAmount(order.items) | currency: 'INR'}}</span>
+        </label>
+      </div>
+
+      <div class="row shop-tracking-status">
+
+        <div class="col-md-12">
+
+          <div class="order-status">
+
+            <div class="order-status-timeline">
+              <div class="order-status-timeline-completion"
+                [ngClass]="order.status === 'Ready to serve' ? 'ready-to-serve' : order.status === 'Preparing' ? 'preparing' : 'order-recieved'">
+              </div>
+            </div>
+
+            <div class="image-order-status image-order-status-new active img-circle">
+              <span class="status">Order Recieved</span>
+              <div class="icon"></div>
+            </div>
+
+            <div class="image-order-status image-order-status-active active img-circle">
+              <span class="status">Preparing</span>
+              <div class="icon"></div>
+            </div>
+
+            <div class="image-order-status image-order-status-completed active img-circle">
+              <span class="status">Ready to serve</span>
+              <div class="icon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="col-12 p-0 m-0 text-right">
+        <button class="btn btn-success btn-sm mr-2" [routerLink]="['/order-details', order.id]"
+          routerLinkActive="router-link-active">View Orders</button>
+        <button class="btn btn-success btn-sm" (click)="changeStatus(order)"
+          [disabled]="order.status === 'Ready to serve'">Change Status</button>
+      </div>
+    </div>
+  </div>
+</section>

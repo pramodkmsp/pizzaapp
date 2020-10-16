@@ -1,0 +1,87 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "customerName": "Rupesh",
+      "address": "Bangalore",
+      "status": "Preparing",
+      "items": [
+        {
+          "itemName": "Pizza",
+          "price": 300,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "customerName": "Pramod",
+      "address": "Mysore",
+      "status": "Ready to serve",
+      "items": [
+        {
+          "itemName": "Pizza",
+          "price": 100,
+          "quantity": 2
+        },
+        {
+          "itemName": "Pizza Special",
+          "price": 1150,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "customerName": "Prajwal",
+      "address": "Manglore",
+      "status": "Order Received",
+      "items": [
+        {
+          "itemName": "Pizza",
+          "price": 400,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "customerName": "Ravikumar",
+      "address": "Mandya",
+      "status": "Order Received",
+      "items": [
+        {
+          "itemName": "Pizza",
+          "price": 300,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "customerName": "Rajesh",
+      "address": "Andrapradesh",
+      "status": "Order Received",
+      "items": [
+        {
+          "itemName": "Pizza",
+          "price": 500,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "customerName": "Ganesh",
+      "address": "Bangalore",
+      "status": "Order Received",
+      "items": [
+        {
+          "itemName": "Pizza",
+          "price": 600,
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}
